@@ -4,21 +4,11 @@ import {
   ResponsiveContext
 } from 'grommet'
 
-const theme = {
-  global: {
-    colors: {
-      brand: '#ffce34',
-      darkGray: '#474c55',
-      lightGray: '#ddddda',
-      white: '#ffffff'
-    },
-    font: {
-      family: 'Montserrat',
-      size: '18px',
-      height: '20px'
-    }
-  }
-}
+import data from './data'
+import theme from './theme'
+
+import Equation from './components/Equation'
+import TermCard from './components/TermCard'
 
 function App () {
   return (
@@ -46,29 +36,19 @@ function App () {
               <Box
                 align='center'
                 background='darkGray'
-                height='100vh'
+                height='90vh'
                 justify='center'
               >
                 <p>Second section</p>
                 <p>Size = {size}</p>
               </Box>
-              <Box
-                align='center'
-                background='white'
-                height='100vh'
-                justify='center'
-                pad='large'
-              >
-                <Box
-                  align='center'
-                  background='brand'
-                  fill
-                  justify='center'
-                  round='large'
-                >
-                  <p>Box in box</p>
-                </Box>
-              </Box>
+              <Equation />
+              {Object.values(data).map(term => (
+                <TermCard
+                  key={term.name}
+                  {...term}
+                />
+              ))}
               <Box
                 align='center'
                 background='brand'
