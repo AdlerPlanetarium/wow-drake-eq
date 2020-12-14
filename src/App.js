@@ -9,6 +9,7 @@ import data from './data'
 import theme from './theme'
 
 import AreWeAlone from './components/AreWeAlone'
+import DrakeEqExplain from './components/DrakeEqExplain'
 import Equation from './components/Equation'
 import TermCard from './components/TermCard'
 
@@ -38,15 +39,9 @@ const App = () => {
           <Box fill>
             <Box flex='grow'>
               <AreWeAlone />
-              <Box
-                align='center'
-                background='darkGray'
-                height='80vh'
-                justify='center'
-              >
-                <p>Second section</p>
-                <p>Size = {size}</p>
-              </Box>
+              <DrakeEqExplain
+                size={size}
+              />
               <Equation
                 values={values}
               />
