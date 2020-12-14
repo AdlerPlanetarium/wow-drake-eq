@@ -27,10 +27,16 @@ const App = () => {
 
   const [values, setValues] = useState(defaultValuesMap)
 
+  const [activeTerm, setActiveTerm] = useState('')
+
   const onValueChange = (name, value) => {
     const newValues = new Map(values)
     newValues.set(name, value)
     setValues(newValues)
+
+    if (name !== activeTerm) {
+      setActiveTerm(name)
+    }
   }
 
   return (
@@ -41,9 +47,12 @@ const App = () => {
             <Box flex='grow'>
               <AreWeAlone />
               <DrakeEqExplain
+                setActiveTerm={setActiveTerm}
                 size={size}
               />
               <Equation
+                activeTerm={activeTerm}
+                setActiveTerm={setActiveTerm}
                 values={values}
               />
               {Object.values(data).map((term, index) => (
@@ -51,6 +60,7 @@ const App = () => {
                   key={term.name}
                   nextTerm={Object.keys(data)[index + 1]}
                   onValueChange={onValueChange}
+                  setActiveTerm={setActiveTerm}
                   value={values.get(term.name)}
                   {...term}
                 />
