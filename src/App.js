@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Box,
   Grommet,
@@ -10,7 +11,25 @@ import theme from './theme'
 import Equation from './components/Equation'
 import TermCard from './components/TermCard'
 
-function App () {
+const App = () => {
+  const defaultValuesMap = new Map([
+    ['rstar', data.rstar.defaultValue],
+    ['fp', data.fp.defaultValue],
+    ['ne', data.ne.defaultValue],
+    ['fl', data.fl.defaultValue],
+    ['fi', data.fi.defaultValue],
+    ['fc', data.fc.defaultValue],
+    ['L', data.L.defaultValue]
+  ])
+
+  const [values, setValues] = useState(defaultValuesMap)
+
+  const onValueChange = (name, value) => {
+    const newValues = new Map(values)
+    newValues.set(name, value)
+    setValues(newValues)
+  }
+
   return (
     <Grommet theme={theme} full>
       <ResponsiveContext.Consumer>
@@ -42,10 +61,14 @@ function App () {
                 <p>Second section</p>
                 <p>Size = {size}</p>
               </Box>
-              <Equation />
+              <Equation
+                values={values}
+              />
               {Object.values(data).map(term => (
                 <TermCard
                   key={term.name}
+                  onValueChange={onValueChange}
+                  value={values.get(term.name)}
                   {...term}
                 />
               ))}

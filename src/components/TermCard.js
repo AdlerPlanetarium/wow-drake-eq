@@ -1,35 +1,32 @@
-import { useState } from 'react'
 import {
   Box,
   RangeInput
 } from 'grommet'
 
 const TermCard = ({
-  defaultValue,
   description,
   displayName,
   estimatedMax,
   estimatedMin,
   name,
+  onValueChange,
   question,
   subscript,
+  value,
   valueType
 }) => {
-  const [value, setValue] = useState((valueType === 'percentage') ? (defaultValue * 100) : defaultValue)
+  const onChange = (event) => {
+    const newValue = parseFloat(event.target.value)
 
-  const onChange = event => setValue(event.target.value)
-
-  let num
-
-  if (valueType === 'log') {
-    num = Math.pow(10, value)
+    onValueChange(name, newValue)
   }
 
-  if (valueType === 'percentage') {
-    num = 100 * value
+  function formatNum (num) {
+    if (valueType === 'log') {
+      return Math.pow(10, num)
+    }
+    return num
   }
-
-  const formatNum = Math.round(num) + (valueType === 'percentage' ? '%' : '')
 
   return (
     <Box
@@ -48,16 +45,18 @@ const TermCard = ({
         round='large'
       >
         <p>{displayName}<sub>{subscript}</sub></p>
-        <p>{formatNum}</p>
+        <p>{formatNum(value)}</p>
         <p>{question}</p>
         <p>{description}</p>
         <RangeInput
-          max={(valueType === 'percentage') ? (estimatedMax * 100) : estimatedMax}
-          min={(valueType === 'percentage') ? (estimatedMin * 100) : estimatedMin}
-          step={(valueType === 'quantity') ? '1' : '0.01'}
+          max={estimatedMax}
+          min={estimatedMin}
+          step={(valueType === 'quantity') ? 1 : 0.01}
           value={value}
           onChange={onChange}
         />
+        <p>Min {formatNum(estimatedMin)}</p>
+        <p>Max {formatNum(estimatedMax)}</p>
       </Box>
     </Box>
   )
