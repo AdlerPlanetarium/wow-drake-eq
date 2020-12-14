@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/wow-drake-eq/static/js/main.c8727b61.chunk.js",
-    "main.js.map": "/wow-drake-eq/static/js/main.c8727b61.chunk.js.map",
-    "runtime-main.js": "/wow-drake-eq/static/js/runtime-main.3def4a38.js",
-    "runtime-main.js.map": "/wow-drake-eq/static/js/runtime-main.3def4a38.js.map",
-    "static/js/2.ac27a805.chunk.js": "/wow-drake-eq/static/js/2.ac27a805.chunk.js",
-    "static/js/2.ac27a805.chunk.js.map": "/wow-drake-eq/static/js/2.ac27a805.chunk.js.map",
-    "static/js/3.18664a1e.chunk.js": "/wow-drake-eq/static/js/3.18664a1e.chunk.js",
-    "static/js/3.18664a1e.chunk.js.map": "/wow-drake-eq/static/js/3.18664a1e.chunk.js.map",
+    "main.js": "/wow-drake-eq/static/js/main.35e5116b.chunk.js",
+    "main.js.map": "/wow-drake-eq/static/js/main.35e5116b.chunk.js.map",
+    "runtime-main.js": "/wow-drake-eq/static/js/runtime-main.e0daf1e9.js",
+    "runtime-main.js.map": "/wow-drake-eq/static/js/runtime-main.e0daf1e9.js.map",
+    "static/js/2.28211544.chunk.js": "/wow-drake-eq/static/js/2.28211544.chunk.js",
+    "static/js/2.28211544.chunk.js.map": "/wow-drake-eq/static/js/2.28211544.chunk.js.map",
+    "static/js/3.808cb436.chunk.js": "/wow-drake-eq/static/js/3.808cb436.chunk.js",
+    "static/js/3.808cb436.chunk.js.map": "/wow-drake-eq/static/js/3.808cb436.chunk.js.map",
     "index.html": "/wow-drake-eq/index.html",
-    "static/js/2.ac27a805.chunk.js.LICENSE.txt": "/wow-drake-eq/static/js/2.ac27a805.chunk.js.LICENSE.txt",
+    "static/js/2.28211544.chunk.js.LICENSE.txt": "/wow-drake-eq/static/js/2.28211544.chunk.js.LICENSE.txt",
     "static/media/Background1.6cff5f84.png": "/wow-drake-eq/static/media/Background1.6cff5f84.png",
     "static/media/Background2.ef993c96.png": "/wow-drake-eq/static/media/Background2.ef993c96.png",
     "static/media/Background3.57b197ef.png": "/wow-drake-eq/static/media/Background3.57b197ef.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.3def4a38.js",
-    "static/js/2.ac27a805.chunk.js",
-    "static/js/main.c8727b61.chunk.js"
+    "static/js/runtime-main.e0daf1e9.js",
+    "static/js/2.28211544.chunk.js",
+    "static/js/main.35e5116b.chunk.js"
   ]
 }
