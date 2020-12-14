@@ -11,6 +11,11 @@ const theme = {
       size: '18px',
       height: '20px'
     }
+  },
+  heading: {
+    font: {
+      family: 'Oswald'
+    }
   }
 }
 

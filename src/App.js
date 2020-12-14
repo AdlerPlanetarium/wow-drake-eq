@@ -8,6 +8,7 @@ import {
 import data from './data'
 import theme from './theme'
 
+import AreWeAlone from './components/AreWeAlone'
 import Equation from './components/Equation'
 import TermCard from './components/TermCard'
 
@@ -36,22 +37,7 @@ const App = () => {
         {size => (
           <Box fill>
             <Box flex='grow'>
-              <Box
-                align='center'
-                background='brand'
-                height='100vh'
-                justify='center'
-              >
-                <p>
-                  COMING SOON
-                </p>
-                <p>
-                  Wow! Signal: Drake Equation
-                </p>
-                <p>
-                  COMING SOON
-                </p>
-              </Box>
+              <AreWeAlone />
               <Box
                 align='center'
                 background='darkGray'
