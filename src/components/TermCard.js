@@ -1,9 +1,26 @@
 import {
   Box,
-  RangeInput
+  Heading,
+  RangeInput,
+  Text
 } from 'grommet'
+import styled from 'styled-components'
 
-const TermCard = ({
+import formatNumber from '../helpers/formatNumber'
+
+const StyledHeading = styled(Heading)`
+  font-style: italic;
+`
+
+const StyledQuestionText = styled(Text)`
+  font-style: italic;
+`
+
+const StyledDescriptionText = styled(Text)`
+  font-style: italic;
+`
+
+function TermCard ({
   description,
   displayName,
   estimatedMax,
@@ -14,18 +31,11 @@ const TermCard = ({
   subscript,
   value,
   valueType
-}) => {
+}) {
   const onChange = (event) => {
     const newValue = parseFloat(event.target.value)
 
     onValueChange(name, newValue)
-  }
-
-  function formatNum (num) {
-    if (valueType === 'log') {
-      return Math.pow(10, num)
-    }
-    return num
   }
 
   return (
@@ -38,16 +48,36 @@ const TermCard = ({
       pad='large'
     >
       <Box
-        align='center'
         background='brand'
         fill
-        justify='center'
         round='large'
+        pad='large'
       >
-        <p>{displayName}<sub>{subscript}</sub></p>
-        <p>{formatNum(value)}</p>
-        <p>{question}</p>
-        <p>{description}</p>
+        <StyledHeading
+          color='darkGray'
+          level={2}
+          margin='none'
+          size='large'
+        >
+          {displayName}
+          <sub>
+            {subscript}
+          </sub>
+        </StyledHeading>
+        <StyledQuestionText
+          color='darkGray'
+          margin='none'
+          weight='bold'
+        >
+          {question}
+        </StyledQuestionText>
+        <br />
+        <StyledDescriptionText
+          color='darkGray'
+          margin={{ bottom: 'large' }}
+        >
+          {description}
+        </StyledDescriptionText>
         <RangeInput
           max={estimatedMax}
           min={estimatedMin}
@@ -55,8 +85,27 @@ const TermCard = ({
           value={value}
           onChange={onChange}
         />
-        <p>Min {formatNum(estimatedMin)}</p>
-        <p>Max {formatNum(estimatedMax)}</p>
+        <Box
+          direction='row'
+          fill='horizontal'
+          justify='between'
+          margin={{ top: 'small' }}
+        >
+          <Text
+            color='darkGray'
+            size='large'
+            weight='bold'
+          >
+            {formatNumber(valueType, estimatedMin)}
+          </Text>
+          <Text
+            color='darkGray'
+            size='large'
+            weight='bold'
+          >
+            {formatNumber(valueType, estimatedMax)}
+          </Text>
+        </Box>
       </Box>
     </Box>
   )

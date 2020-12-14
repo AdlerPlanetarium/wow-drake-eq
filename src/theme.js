@@ -13,8 +13,17 @@ const theme = {
     }
   },
   heading: {
-    font: {
-      family: 'Oswald'
+    level: {
+      1: {
+        font: {
+          family: 'Oswald'
+        }
+      }
+    }
+  },
+  rangeInput: {
+    thumb: {
+      color: 'darkGray'
     }
   }
 }

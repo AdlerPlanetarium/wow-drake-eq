@@ -25,7 +25,7 @@ function WowEnd ({ values }) {
         content='If your guesses turn out to be right, there are'
       />
       <WowHeading
-        content={Math.round(result)}
+        content={Math.round(result).toLocaleString()}
       />
       <WowText
         content='alien civilizations in our galaxy who are trying to get your attention!'
