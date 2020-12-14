@@ -36,7 +36,7 @@ function App () {
               <Box
                 align='center'
                 background='darkGray'
-                height='90vh'
+                height='80vh'
                 justify='center'
               >
                 <p>Second section</p>
@@ -52,7 +52,7 @@ function App () {
               <Box
                 align='center'
                 background='brand'
-                height='100vh'
+                height='80vh'
                 justify='center'
               >
                 <p>Last section</p>

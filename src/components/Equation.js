@@ -7,11 +7,12 @@ function Equation () {
     <Box
       align='center'
       background='lightGray'
-      height='10vh'
+      height='20vh'
       justify='center'
       style={{
         position: 'sticky',
-        top: '0px'
+        top: '0px',
+        zIndex: 1
       }}
     >
       <p>1 + 2 + 3 + 4 + 5 + 6 + 7 = 28</p>
