@@ -6,6 +6,14 @@ const theme = {
       lightGray: '#ddddda',
       white: '#ffffff'
     },
+    focus: {
+      border: {
+        color: 'lightGray'
+      },
+      outline: {
+        color: 'lightGray'
+      }
+    },
     font: {
       family: 'Montserrat',
       size: '18px',

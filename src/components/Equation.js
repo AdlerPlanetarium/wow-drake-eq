@@ -1,9 +1,16 @@
 import {
-  Box
+  Box,
+  Text
 } from 'grommet'
+import styled from 'styled-components'
 
 import data from '../data'
+import formatNumber from '../helpers/formatNumber'
 import getResult from '../helpers/getResult'
+
+const StyledItalicText = styled(Text)`
+  font-style: italic;
+`
 
 function Equation ({ values }) {
   const result = getResult(values)
@@ -13,25 +20,67 @@ function Equation ({ values }) {
       align='center'
       background='lightGray'
       direction='row'
+      fill='horizontal'
       height='20vh'
-      justify='center'
+      justify='stretch'
+      pad={{ horizontal: 'large' }}
       style={{
         position: 'sticky',
         top: '0px',
         zIndex: 1
       }}
     >
-      {Object.values(data).map(term => (
-        <p
-          key={term.name}
-        >
-          <span>{term.name} = </span>
-          <span>{values.get(term.name)}</span>
-          <span>__</span>
-        </p>
-      ))}
-      <span>***</span>
-      <p>Result = {Math.round(result)}</p>
+      <StyledItalicText
+        color='darkGray'
+        margin={{ right: 'medium' }}
+        weight='bold'
+      >
+        alieNs =
+      </StyledItalicText>
+      <Box
+        flex
+        direction='row'
+        justify='between'
+      >
+        {Object.values(data).map(term => (
+          <Box
+            key={term.name}
+            align='center'
+            direction='column'
+          >
+            <Box
+              align='center'
+              background='darkGray'
+              height='50px'
+              justify='center'
+              round='small'
+              width='50px'
+            >
+              <StyledItalicText
+                color='white'
+                weight='bold'
+              >
+                {term.displayName}
+                <sub>
+                  {term.subscript}
+                </sub>
+              </StyledItalicText>
+            </Box>
+            <Text
+              weight='bold'
+            >
+              {formatNumber(term.valueType, values.get(term.name))}
+            </Text>
+          </Box>
+        ))}
+      </Box>
+      <StyledItalicText
+        color='darkGray'
+        margin={{ left: 'medium' }}
+        weight='bold'
+      >
+         = {Math.round(result).toLocaleString()}
+      </StyledItalicText>
     </Box>
   )
 }
