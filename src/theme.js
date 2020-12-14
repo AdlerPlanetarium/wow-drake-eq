@@ -32,6 +32,9 @@ const theme = {
   rangeInput: {
     thumb: {
       color: 'darkGray'
+    },
+    track: {
+      color: 'white'
     }
   }
 }
