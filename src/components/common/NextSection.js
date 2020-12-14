@@ -1,7 +1,7 @@
 import {
   Button
 } from 'grommet'
-import { FormDown } from 'grommet-icons'
+import { Down } from 'grommet-icons'
 
 function NextSection ({
   setActiveTerm = () => {},
@@ -11,7 +11,13 @@ function NextSection ({
     <Button
       alignSelf='center'
       href={`#${to}`}
-      icon={<FormDown />}
+      icon={
+        <Down
+          color={(to === 'rstar') ? 'white' : 'darkGray'}
+          size={(to === 'drakeEqExplain') ? 'large' : 'medium'}
+        />
+      }
+      margin={{ top: ((to === 'drakeEqExplain') ? 'large' : 'small') }}
       onClick={() => setActiveTerm(to)}
     />
   )
