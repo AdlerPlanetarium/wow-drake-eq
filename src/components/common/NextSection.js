@@ -3,12 +3,16 @@ import {
 } from 'grommet'
 import { FormDown } from 'grommet-icons'
 
-function NextSection ({ to }) {
+function NextSection ({
+  setActiveTerm = () => {},
+  to
+}) {
   return (
     <Button
       alignSelf='center'
       href={`#${to}`}
       icon={<FormDown />}
+      onClick={() => setActiveTerm(to)}
     />
   )
 }

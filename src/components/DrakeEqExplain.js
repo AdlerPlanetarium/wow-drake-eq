@@ -7,7 +7,10 @@ import {
 import background2 from '../assets/Background2.png'
 import NextSection from './common/NextSection'
 
-function DrakeEqExplain ({ size }) {
+function DrakeEqExplain ({
+  setActiveTerm,
+  size
+}) {
   return (
     <Box
       id='drakeEqExplain'
@@ -38,7 +41,10 @@ function DrakeEqExplain ({ size }) {
       >
         Click or tap the squares below to learn about each variable and take your best guess. When you're done, we'll show you how many alien societies could be right here in the Milky Way, trying to communicate with you!
       </Paragraph>
-      <NextSection to='rstar' />
+      <NextSection
+        setActiveTerm={setActiveTerm}
+        to='rstar'
+      />
       <div id='rstar' />
     </Box>
   )

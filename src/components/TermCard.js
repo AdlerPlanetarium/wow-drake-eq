@@ -30,6 +30,7 @@ function TermCard ({
   nextTerm,
   onValueChange,
   question,
+  setActiveTerm,
   subscript,
   value,
   valueType
@@ -108,7 +109,10 @@ function TermCard ({
             {formatNumber(valueType, estimatedMax)}
           </Text>
         </Box>
-        <NextSection to={nextTerm || 'wowEnd'} />
+        <NextSection
+          to={nextTerm || 'wowEnd'}
+          setActiveTerm={setActiveTerm}
+        />
         <div id={nextTerm} />
       </Box>
     </Box>

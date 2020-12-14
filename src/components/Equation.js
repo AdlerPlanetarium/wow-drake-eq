@@ -1,5 +1,5 @@
 import {
-  Anchor,
+  Button,
   Box,
   Text
 } from 'grommet'
@@ -9,11 +9,19 @@ import data from '../data'
 import formatNumber from '../helpers/formatNumber'
 import getResult from '../helpers/getResult'
 
+const StyledButton = styled(Button)`
+  border-radius: 10px;
+`
+
 const StyledItalicText = styled(Text)`
   font-style: italic;
 `
 
-function Equation ({ values }) {
+function Equation ({
+  activeTerm,
+  setActiveTerm,
+  values
+}) {
   const result = getResult(values)
 
   return (
@@ -49,27 +57,21 @@ function Equation ({ values }) {
             align='center'
             direction='column'
           >
-            <Anchor
+            <StyledButton
               href={`#${term.name}`}
+              color={(activeTerm === term.name) ? 'brand' : 'darkGray'}
+              onClick={() => setActiveTerm(term.name)}
+              primary
               label={
-                <Box
-                  align='center'
-                  background='darkGray'
-                  height='50px'
-                  justify='center'
-                  round='small'
-                  width='50px'
+                <StyledItalicText
+                  color='white'
+                  weight='bold'
                 >
-                  <StyledItalicText
-                    color='white'
-                    weight='bold'
-                  >
-                    {term.displayName}
-                    <sub>
-                      {term.subscript}
-                    </sub>
-                  </StyledItalicText>
-                </Box>
+                  {term.displayName}
+                  <sub>
+                    {term.subscript}
+                  </sub>
+                </StyledItalicText>
               }
             />
             <Text
