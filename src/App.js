@@ -46,10 +46,11 @@ const App = () => {
               <Equation
                 values={values}
               />
-              {Object.values(data).map(term => (
+              {Object.values(data).map((term, index) => (
                 <TermCard
                   key={term.name}
                   onValueChange={onValueChange}
+                  prevTerm={Object.keys(data)[index + 1]}
                   value={values.get(term.name)}
                   {...term}
                 />

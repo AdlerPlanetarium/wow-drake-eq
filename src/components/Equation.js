@@ -1,4 +1,5 @@
 import {
+  Anchor,
   Box,
   Text
 } from 'grommet'
@@ -48,24 +49,29 @@ function Equation ({ values }) {
             align='center'
             direction='column'
           >
-            <Box
-              align='center'
-              background='darkGray'
-              height='50px'
-              justify='center'
-              round='small'
-              width='50px'
-            >
-              <StyledItalicText
-                color='white'
-                weight='bold'
-              >
-                {term.displayName}
-                <sub>
-                  {term.subscript}
-                </sub>
-              </StyledItalicText>
-            </Box>
+            <Anchor
+              href={`#${term.name}`}
+              label={
+                <Box
+                  align='center'
+                  background='darkGray'
+                  height='50px'
+                  justify='center'
+                  round='small'
+                  width='50px'
+                >
+                  <StyledItalicText
+                    color='white'
+                    weight='bold'
+                  >
+                    {term.displayName}
+                    <sub>
+                      {term.subscript}
+                    </sub>
+                  </StyledItalicText>
+                </Box>
+              }
+            />
             <Text
               weight='bold'
             >

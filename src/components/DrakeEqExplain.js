@@ -34,6 +34,7 @@ function DrakeEqExplain ({ size }) {
       >
         Click or tap the squares below to learn about each variable and take your best guess. When you're done, we'll show you how many alien societies could be right here in the Milky Way, trying to communicate with you!
       </Paragraph>
+      <div id='rstar' />
     </Box>
   )
 }

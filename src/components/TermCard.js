@@ -27,6 +27,7 @@ function TermCard ({
   estimatedMin,
   name,
   onValueChange,
+  prevTerm,
   question,
   subscript,
   value,
@@ -106,6 +107,7 @@ function TermCard ({
             {formatNumber(valueType, estimatedMax)}
           </Text>
         </Box>
+        <div id={prevTerm} />
       </Box>
     </Box>
   )
