@@ -12,6 +12,7 @@ function WowEnd ({ values }) {
 
   return (
     <Box
+      id='wowEnd'
       align='center'
       background={`url(${background3})`}
       height='80vh'

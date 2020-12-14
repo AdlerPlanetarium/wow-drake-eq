@@ -49,8 +49,8 @@ const App = () => {
               {Object.values(data).map((term, index) => (
                 <TermCard
                   key={term.name}
+                  nextTerm={Object.keys(data)[index + 1]}
                   onValueChange={onValueChange}
-                  prevTerm={Object.keys(data)[index + 1]}
                   value={values.get(term.name)}
                   {...term}
                 />

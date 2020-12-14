@@ -7,6 +7,7 @@ import {
 import styled from 'styled-components'
 
 import formatNumber from '../helpers/formatNumber'
+import NextSection from './common/NextSection'
 
 const StyledHeading = styled(Heading)`
   font-style: italic;
@@ -26,8 +27,8 @@ function TermCard ({
   estimatedMax,
   estimatedMin,
   name,
+  nextTerm,
   onValueChange,
-  prevTerm,
   question,
   subscript,
   value,
@@ -107,7 +108,8 @@ function TermCard ({
             {formatNumber(valueType, estimatedMax)}
           </Text>
         </Box>
-        <div id={prevTerm} />
+        <NextSection to={nextTerm || 'wowEnd'} />
+        <div id={nextTerm} />
       </Box>
     </Box>
   )

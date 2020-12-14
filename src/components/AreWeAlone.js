@@ -5,6 +5,7 @@ import {
 import background1 from '../assets/Background1.png'
 import WowHeading from './common/WowHeading'
 import WowText from './common/WowText'
+import NextSection from './common/NextSection'
 
 function AreWeAlone () {
   return (
@@ -23,6 +24,7 @@ function AreWeAlone () {
       <WowText
         content='Use math to find out.'
       />
+      <NextSection to='drakeEqExplain' />
     </Box>
   )
 }
