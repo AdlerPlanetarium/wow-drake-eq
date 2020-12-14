@@ -83,7 +83,7 @@ function TermCard ({
         <RangeInput
           max={estimatedMax}
           min={estimatedMin}
-          step={(valueType === 'quantity') ? 1 : 0.01}
+          step={(valueType === 'quantity') ? 0.1 : 0.01}
           value={value}
           onChange={onChange}
         />
