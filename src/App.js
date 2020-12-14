@@ -12,6 +12,7 @@ import AreWeAlone from './components/AreWeAlone'
 import DrakeEqExplain from './components/DrakeEqExplain'
 import Equation from './components/Equation'
 import TermCard from './components/TermCard'
+import WowEnd from './components/WowEnd'
 
 const App = () => {
   const defaultValuesMap = new Map([
@@ -53,15 +54,9 @@ const App = () => {
                   {...term}
                 />
               ))}
-              <Box
-                align='center'
-                background='brand'
-                height='80vh'
-                justify='center'
-              >
-                <p>Last section</p>
-                <p>Bye!</p>
-              </Box>
+              <WowEnd
+                values={values}
+              />
             </Box>
           </Box>
         )}

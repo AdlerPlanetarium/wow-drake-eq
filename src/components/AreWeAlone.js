@@ -1,10 +1,10 @@
 import {
-  Box,
-  Heading,
-  Text
+  Box
 } from 'grommet'
 
 import background1 from '../assets/Background1.png'
+import WowHeading from './common/WowHeading'
+import WowText from './common/WowText'
 
 function AreWeAlone () {
   return (
@@ -14,33 +14,15 @@ function AreWeAlone () {
       height='100vh'
       justify='center'
     >
-      <Heading
-        color='darkGray'
-        level={1}
-        margin={{ bottom: 'small' }}
-        size='large'
-        textAlign='center'
-      >
-        ARE WE ALONE?
-      </Heading>
-      <Text
-        color='darkGray'
-        margin='none'
-        size='xlarge'
-        textAlign='center'
-        weight='bold'
-      >
-        How many alien civilizations might be out there?
-      </Text>
-      <Text
-        color='darkGray'
-        margin='none'
-        size='xlarge'
-        textAlign='center'
-        weight='bold'
-      >
-        Use math to find out.
-      </Text>
+      <WowHeading
+        content='ARE WE ALONE?'
+      />
+      <WowText
+        content='How many alien civilizations might be out there?'
+      />
+      <WowText
+        content='Use math to find out.'
+      />
     </Box>
   )
 }

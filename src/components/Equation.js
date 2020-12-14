@@ -3,16 +3,10 @@ import {
 } from 'grommet'
 
 import data from '../data'
+import getResult from '../helpers/getResult'
 
 function Equation ({ values }) {
-  let result = 1
-  values.forEach((value, key) => {
-    if (key === 'L') {
-      result *= Math.pow(10, value)
-    } else {
-      result *= value
-    }
-  })
+  const result = getResult(values)
 
   return (
     <Box
