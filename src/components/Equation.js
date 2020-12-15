@@ -20,6 +20,7 @@ const StyledItalicText = styled(Text)`
 function Equation ({
   activeTerm,
   setActiveTerm,
+  size,
   values
 }) {
   const result = getResult(values)
@@ -28,16 +29,19 @@ function Equation ({
     <Box
       align='center'
       background='lightGray'
-      direction='row'
+      direction='row-responsive'
       fill='horizontal'
       height='20vh'
-      justify='stretch'
-      pad={{ horizontal: 'large' }}
+      pad={{
+        horizontal: 'large',
+        vertical: 'small'
+      }}
       style={{
         position: 'sticky',
         top: '0px',
         zIndex: 1
       }}
+      wrap={(size === 'small')}
     >
       <StyledItalicText
         color='darkGray'
@@ -47,15 +51,18 @@ function Equation ({
         alieNs =
       </StyledItalicText>
       <Box
+        align='center'
         flex
         direction='row'
-        justify='between'
+        justify={(size === 'small') ? 'center' : 'between'}
+        wrap={(size === 'small')}
       >
         {Object.values(data).map(term => (
           <Box
             key={term.name}
             align='center'
             direction='column'
+            margin='small'
           >
             <StyledButton
               href={`#${term.name}`}
@@ -74,15 +81,17 @@ function Equation ({
                 </StyledItalicText>
               }
             />
-            <Text
-              weight='bold'
-            >
-              {formatNumber(term.valueType, values.get(term.name))}
-            </Text>
+            {(size !== 'small') &&
+              <Text
+                weight='bold'
+              >
+                {formatNumber(term.valueType, values.get(term.name))}
+              </Text>}
           </Box>
         ))}
       </Box>
       <StyledItalicText
+        alignSelf={(size === 'small') ? 'end' : 'center'}
         color='darkGray'
         margin={{ left: 'medium' }}
         weight='bold'

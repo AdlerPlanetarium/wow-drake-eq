@@ -37,6 +37,7 @@ function DrakeEqExplain ({
       </Paragraph>
       <Paragraph
         color='white'
+        margin={{ bottom: 'none' }}
         textAlign={size === 'small' ? 'center' : 'start'}
       >
         Click or tap the squares below to learn about each variable and take your best guess. When you're done, we'll show you how many alien societies could be right here in the Milky Way, trying to communicate with you!
