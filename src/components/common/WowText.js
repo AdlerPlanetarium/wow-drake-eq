@@ -8,6 +8,7 @@ function WowText ({ content }) {
       color='darkGray'
       margin='none'
       size='xlarge'
+      textAlign='center'
       weight='bold'
     >
       {content}

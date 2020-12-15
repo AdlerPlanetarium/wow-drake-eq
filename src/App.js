@@ -53,6 +53,7 @@ const App = () => {
               <Equation
                 activeTerm={activeTerm}
                 setActiveTerm={setActiveTerm}
+                size={size}
                 values={values}
               />
               {Object.values(data).map((term, index) => (
