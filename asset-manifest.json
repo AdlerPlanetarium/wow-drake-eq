@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/wow-drake-eq/static/js/main.35e5116b.chunk.js",
-    "main.js.map": "/wow-drake-eq/static/js/main.35e5116b.chunk.js.map",
+    "main.js": "/wow-drake-eq/static/js/main.cef69757.chunk.js",
+    "main.js.map": "/wow-drake-eq/static/js/main.cef69757.chunk.js.map",
     "runtime-main.js": "/wow-drake-eq/static/js/runtime-main.e0daf1e9.js",
     "runtime-main.js.map": "/wow-drake-eq/static/js/runtime-main.e0daf1e9.js.map",
     "static/js/2.28211544.chunk.js": "/wow-drake-eq/static/js/2.28211544.chunk.js",
@@ -17,6 +17,6 @@
   "entrypoints": [
     "static/js/runtime-main.e0daf1e9.js",
     "static/js/2.28211544.chunk.js",
-    "static/js/main.35e5116b.chunk.js"
+    "static/js/main.cef69757.chunk.js"
   ]
 }
