@@ -44,11 +44,15 @@ function TermCard ({
   return (
     <Box
       key={name}
+      id={name}
       align='center'
       background='white'
       height='80vh'
       justify='center'
       pad='large'
+      style={{
+        scrollMarginTop: '20vh'
+      }}
     >
       <Box
         background='brand'
@@ -113,7 +117,6 @@ function TermCard ({
           to={nextTerm || 'wowEnd'}
           setActiveTerm={setActiveTerm}
         />
-        <div id={nextTerm} />
       </Box>
     </Box>
   )
