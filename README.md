@@ -1,4 +1,4 @@
-# Wow! Signal: Drake Equation
+# [Wow! Signal: Drake Equation](https://adlerplanetarium.github.io/wow-drake-eq/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
