@@ -13,7 +13,7 @@ function NextSection ({
       href={`#${to}`}
       icon={
         <Down
-          color={(to === 'rstar') ? 'white' : 'darkGray'}
+          color='darkGray'
           size={(to === 'drakeEqExplain' || to === 'wowEnd') ? 'large' : 'medium'}
         />
       }

@@ -57,8 +57,9 @@ function TermCard ({
       <Box
         background='brand'
         fill
-        round='large'
+        overflow='scroll'
         pad='large'
+        round='large'
       >
         <StyledHeading
           color='darkGray'
