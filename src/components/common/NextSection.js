@@ -14,7 +14,7 @@ function NextSection ({
       icon={
         <Down
           color={(to === 'rstar') ? 'white' : 'darkGray'}
-          size={(to === 'drakeEqExplain') ? 'large' : 'medium'}
+          size={(to === 'drakeEqExplain' || to === 'wowEnd') ? 'large' : 'medium'}
         />
       }
       margin={{ top: ((to === 'drakeEqExplain') ? 'large' : 'small') }}

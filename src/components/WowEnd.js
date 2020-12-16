@@ -18,6 +18,9 @@ function WowEnd ({ values }) {
       height='80vh'
       justify='center'
       pad='small'
+      style={{
+        scrollMarginTop: '20vh'
+      }}
     >
       <WowHeading
         content='WOW!'

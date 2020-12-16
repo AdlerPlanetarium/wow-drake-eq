@@ -46,7 +46,6 @@ function DrakeEqExplain ({
         setActiveTerm={setActiveTerm}
         to='rstar'
       />
-      <div id='rstar' />
     </Box>
   )
 }
