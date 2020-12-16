@@ -29,74 +29,62 @@ function Equation ({
     <Box
       align='center'
       background='lightGray'
-      direction='row-responsive'
+      direction='row'
       fill='horizontal'
       height='20vh'
-      pad={{
-        horizontal: 'large',
-        vertical: 'small'
-      }}
+      justify='center'
       style={{
         position: 'sticky',
         top: '0px',
         zIndex: 1
       }}
-      wrap={(size === 'small')}
+      wrap
     >
       <StyledItalicText
         color='darkGray'
-        margin={{ right: 'medium' }}
+        margin={{ right: 'small' }}
         weight='bold'
       >
         alieNs =
       </StyledItalicText>
-      <Box
-        align='center'
-        flex
-        direction='row'
-        justify={(size === 'small') ? 'center' : 'between'}
-        wrap={(size === 'small')}
-      >
-        {Object.values(data).map(term => (
-          <Box
-            key={term.name}
-            align='center'
-            direction='column'
-            margin='small'
-          >
-            <StyledButton
-              href={`#${term.name}`}
-              color={(activeTerm === term.name) ? 'brand' : 'darkGray'}
-              onClick={() => setActiveTerm(term.name)}
-              primary
-              label={
-                <StyledItalicText
-                  color='white'
-                  weight='bold'
-                >
-                  {term.displayName}
-                  <sub>
-                    {term.subscript}
-                  </sub>
-                </StyledItalicText>
-              }
-            />
-            {(size !== 'small') &&
-              <Text
+      {Object.values(data).map(term => (
+        <Box
+          key={term.name}
+          align='center'
+          direction='column'
+          margin='small'
+        >
+          <StyledButton
+            href={`#${term.name}`}
+            color={(activeTerm === term.name) ? 'brand' : 'darkGray'}
+            onClick={() => setActiveTerm(term.name)}
+            primary
+            label={
+              <StyledItalicText
+                color='white'
                 weight='bold'
               >
-                {formatNumber(term.valueType, values.get(term.name))}
-              </Text>}
-          </Box>
-        ))}
-      </Box>
+                {term.displayName}
+                <sub>
+                  {term.subscript}
+                </sub>
+              </StyledItalicText>
+            }
+          />
+          {(size !== 'small') &&
+            <Text
+              weight='bold'
+            >
+              {formatNumber(term.valueType, values.get(term.name))}
+            </Text>}
+        </Box>
+      ))}
       <StyledItalicText
-        alignSelf={(size === 'small') ? 'end' : 'center'}
         color='darkGray'
-        margin={{ left: 'medium' }}
+        margin={{ left: 'small' }}
         weight='bold'
       >
-         = {Math.round(result).toLocaleString()}
+        = {Math.round(result).toLocaleString()}
       </StyledItalicText>
     </Box>
   )

@@ -47,7 +47,6 @@ const App = () => {
             <Box flex='grow'>
               <AreWeAlone />
               <DrakeEqExplain
-                setActiveTerm={setActiveTerm}
                 size={size}
               />
               <Equation
