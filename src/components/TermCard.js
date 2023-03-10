@@ -57,7 +57,7 @@ function TermCard ({
       <Box
         background='brand'
         fill
-        overflow='scroll'
+        overflow='auto'
         pad='large'
         round='large'
       >
