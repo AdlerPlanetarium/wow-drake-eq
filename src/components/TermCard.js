@@ -21,6 +21,10 @@ const StyledDescriptionText = styled(Text)`
   font-style: italic;
 `
 
+const StyledRangeInput = styled(RangeInput)`
+  width: auto;
+`
+
 function TermCard ({
   description,
   displayName,
@@ -86,7 +90,7 @@ function TermCard ({
         >
           {description}
         </StyledDescriptionText>
-        <RangeInput
+        <StyledRangeInput
           max={estimatedMax}
           min={estimatedMin}
           step={(valueType === 'quantity') ? 0.1 : 0.01}
